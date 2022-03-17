@@ -7,3 +7,13 @@
 [![codecov](https://codecov.io/gh/ianhi/pycro-plus-bridge/branch/master/graph/badge.svg)](https://codecov.io/gh/ianhi/pycro-plus-bridge)
 
 Bridge to use pycromanager as core of pymmcore-plus
+
+
+### Dev install
+
+```bash
+pip install -e ".[dev]"
+
+# optional installation of pre-commit hooks
+pre-commit install
+```
