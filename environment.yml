@@ -1,0 +1,9 @@
+name: pycro-plus-bridge-dev
+channels:
+  - defaults
+dependencies:
+  - pandoc
+  - pip
+  - python
+  - pip:
+      - -e .[dev]
