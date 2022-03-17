@@ -13,4 +13,11 @@ def test_for_smoke():
     start_headless(
         str(mm_app_path), str(mm_app_path / "MMConfig_demo.cfg"), timeout=5000
     )
-    pycroCorePlus()
+    core = pycroCorePlus()
+    core.snapImage()
+    img1 = core.getImage()
+    assert img1.sum() > 0
+
+    # pymmc+ method that hopefully calls back through java
+    img2 = core.snap()
+    assert img2.sum() > 0
