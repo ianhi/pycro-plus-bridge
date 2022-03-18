@@ -9,7 +9,7 @@ from pycro_plus_bridge import pycroCorePlus
 
 
 @pytest.fixture(scope="session")
-def core() -> pycroCorePlus:
+def core():
     mm_app_path = Path(find_micromanager())
     start_headless(
         str(mm_app_path),
@@ -20,9 +20,11 @@ def core() -> pycroCorePlus:
     core = pycroCorePlus()
     yield core
     cleanup()
+    raise ValueError("we got here?")
 
 
 def test_for_smoke(core: pycroCorePlus):
+    core = pycroCorePlus()
     core.snapImage()
     img1 = core.getImage()
     assert img1.sum() > 0
