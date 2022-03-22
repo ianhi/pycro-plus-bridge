@@ -15,7 +15,7 @@ ListOrTuple = Union[List[_T], Tuple[_T, ...]]
 
 class pycroCorePlus(pycroCore, CMMCorePlus):
     def __init__(self, mm_path=None, adapter_paths: ListOrTuple[str] = None):
-        pycroCore().__init__()
+        pycroCore().__init__(convert_camel_case=False)
         CMMCorePlus().__init__(mm_path, adapter_paths)
         # TODO 1: convert pycromanager signals to work with self.events
         # TODO 2: register pycromanager acquisition engine as an mda engine
